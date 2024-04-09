@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 0;
+}
+
+h2 {
+  padding-bottom: 20px;
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px gray;
+}
+
+/*        Header        */
+header {
+  background-color: lightblue;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 120px;
+  height: 50px;
+  padding: 10px;
+  background-color: rgb(42, 65, 165);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo a {
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+nav {
+  width: 420px;
+}
+
+ol {
+  background-color: rgb(68, 87, 182);
+  list-style: none;
+  border-radius: 50px 0 0 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+ol li {
+  width: 100px;
+}
+
+ol li a {
+  color: white;
+  border-bottom: 5px solid rgb(68, 87, 182);
+  width: 100%;
+  line-height: 45px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+ol li a:hover {
+  color: rgb(222, 221, 221);
+  border-bottom: 5px solid rgb(222, 221, 221);
+}
+
+.menu {
+  display: none;
+}
+
+/*        Banner        */
+#Banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-bottom: 1px solid gray;
+}
+
+.slogan {
+  position: absolute;
+  width: 450px;
+  left: calc((100% - 450px) / 2);
+  bottom: 300px;
+  z-index: 3;
+  transform-style: preserve-3d;
+  transition: all 1s;
+  animation: slogan_jump 1s ease-in-out 2.25s 1 forwards;
+  opacity: 0;
+}
+
+.mario {
+  position: relative;
+  background: lightblue url("../images/mario_grass.png") repeat-x bottom;
+  width: 100%;
+  height: 100%;
+}
+
+#grass {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#mario_run {
+  position: absolute;
+  bottom: 5px;
+  z-index: 2;
+  animation: mario_run_animation 2s ease-in 1 forwards;
+}
+
+#mario_jump {
+  position: absolute;
+  left: calc((100% - 141px)/2);
+  bottom: 5px;
+  z-index: 2;
+  animation: mario_jump_animation 0.5s ease-in 2s 1 forwards;
+  opacity: 0;
+}
+
+@keyframes mario_run_animation {
+  0% {
+    left: -231px;
+  }
+
+  10% {
+    transform: rotate(-5deg);
+  }
+
+  20% {
+    transform: rotate(5deg);
+  }
+
+  30% {
+    transform: rotate(-5deg);
+  }
+
+  40% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(5deg);
+  }
+
+  70% {
+    transform: rotate(-5deg);
+  }
+
+  80% {
+    transform: rotate(5deg);
+  }
+
+  90% {
+    transform: rotate(-5deg);
+    opacity: 1;
+  }
+
+  100% {
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes mario_jump_animation {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  50% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slogan_jump {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotateY(0) scale(0.01);
+  }
+
+  50% {
+    transform: translateY(-50px) rotateY(360deg) scale(1.2);
+  }
+
+  100% {
+    transform: translateY(20px) rotateY(720deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/*        About         */
+#About .container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.my-photo {
+  width: 402px;
+  height: 555px;
+  border: 2px double black;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.my-photo:hover {
+  transform: scale(1.1);
+}
+
+.my-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.description {
+  width: 50%;
+  padding: 30px;
+}
+
+.description>p {
+  padding-bottom: 30px;
+  font-size: 1rem;
+  text-align: justify;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.description h3 {
+  font-size: 1.5rem;
+}
+
+.education-list {
+  list-style: none;
+}
+
+.education-list li {
+  background-color: rgb(235, 235, 235);
+  margin: 18px 0;
+  padding: 10px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+}
+
+.education-list h4 {
+  color: rgb(50, 50, 50);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.education-list p {
+  color: rgb(105, 105, 105);
+}
+
+/*      Experience      */
+#Experience {
+  background-color: rgb(224, 224, 224);
+}
+
+.work-list {
+  list-style: none;
+}
+
+.work-list li {
+  margin: 30px 0;
+  padding-bottom: 15px;
+  align-items: center;
+  align-content: center;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.work-period {
+  width: 150px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 15px;
+  letter-spacing: 1px;
+}
+
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.company-logo img {
+  width: 100%;
+  border-radius: 50px;
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-grow: 1;
+}
+
+/*      Portfolio       */
+#Portfolio {
+  margin-top: 50px;
+}
+
+#Portfolio .container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  justify-content: center;
+}
+
+#Portfolio h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.card:hover .side-front {
+  transform: rotateX(180deg);
+}
+
+.card:hover .side-back {
+  transform: rotateX(0deg);
+}
+
+.side-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* 翻轉時隱藏背面 */
+  transition: all 0.5s;
+}
+
+.side-front img {
+  width: 100%;
+}
+
+.side-back {
+  background-color: rgb(165, 165, 165);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+  transform: rotateX(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic1 {
+  grid-area: 1 / 3 / 2 / 5;
+}
+
+.pic2 {
+  grid-area: 2 / 1 / 4 / 3;
+}
+
+.pic3 {
+  grid-area: 3 / 4 / 4 / 6;
+}
+
+.cover {
+  height: 100%;
+  object-fit: cover;
+}
+
+.pos1 {
+  transform: translateY(-50px);
+}
+
+.pos2 {
+  transform: translateY(-150px);
+}
+
+/*       Contact        */
+#Contact {
+  background-image: linear-gradient(to left bottom, #3c9d99, #0086a0, #006ca7, #004ea2, #232789);
+  padding: 80px 0;
+}
+
+#Contact .container {
+  display: flex;
+  justify-content: center;
+}
+
+.w-50 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.w-50 h2 {
+  color: white;
+  text-shadow: 1px 1px 3px lightgray;
+}
+
+.w-50 p {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.info {
+  list-style: none;
+}
+
+.info li {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+#ContactForm {
+  width: 100%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgb(92, 92, 92);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(235, 235, 235);
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+textarea {
+  height: 200px;
+  margin-bottom: 20px;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(235, 235, 235);
+  font-size: 18px;
+  flex-grow: 1;
+  resize: none;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px gray;
+}
+
+form button {
+  width: 120px;
+  background-color: white;
+  color: black;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+  width: 120px;
+  background-color: #3498db;
+  color: white;
+}
+
+/*        Footer        */
+footer {
+  background: #383838;
+  padding: 20px;
+}
+
+footer p {
+  width: 80%;
+  margin: auto;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 767px) {
+  /*        Header        */
+  header {
+  background-color: rgb(68, 87, 182);
+  flex-wrap: wrap;
+  }
+
+  .menu {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(48, 64, 142);
+    color: white;
+    border-radius: 50px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  ol {
+    flex-wrap: wrap;
+  }
+
+  ol li {
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
+
+  /*        Banner        */
+  .slogan{
+    width: 230px;
+    left: calc((100% - 230px) / 2);
+  }
+
+  /*        About         */
+  #About .container {
+    flex-wrap: wrap;
+  }
+
+  .my-photo {
+    width: 100%;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .work-list li {
+    flex-wrap: wrap;
+  }
+
+  .work-period{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /*      Portfolio       */
+  #Portfolio .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 45%;
+    height: 150px;
+    max-height: 100%;
+  }
+
+  .pos1 {
+    transform: translateY(0px);
+  }
+  
+  .pos2 {
+    transform: translateY(0px);
+  }
+
+  /*       Contact        */
+  #Contact {
+  padding: 20px 0;
+}
+  
+  #Contact .container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+  .w-50 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+}
+
